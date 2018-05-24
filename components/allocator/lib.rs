@@ -94,11 +94,6 @@ mod platform {
             let flags = layout_to_flags(layout.align(), new_size);
             ffi::rallocx(ptr as *mut _, new_size, flags) as *mut Opaque
         }
-
-        #[inline]
-        fn oom(&self) -> ! {
-            System.oom()
-        }
     }
 }
 
